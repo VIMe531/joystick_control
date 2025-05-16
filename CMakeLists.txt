@@ -24,3 +24,7 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+add_executable(joy_to_cmdvel src/joy_to_cmdvel.cpp)
+ament_target_dependencies(joy_to_cmdvel rclcpp sensor_msgs geometry_msgs)
+install(TARGETS joy_to_cmdvel DESTINATION lib/${PROJECT_NAME})
